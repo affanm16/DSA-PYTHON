@@ -1,4 +1,4 @@
-#linear search
+#linear Search
 
 import numpy as np
 twoDArray=np.array( [ [21 ,35 ,40 ,37],[20, 38, 43, 29],[21, 30 ,39 ,38],[20 ,31, 50, 44] ] )
