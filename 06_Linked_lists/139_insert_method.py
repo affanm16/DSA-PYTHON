@@ -1,3 +1,4 @@
+#iinserting in the middle
 # insertion in linked list
 class Node:
     def __init__(self,value):
@@ -31,6 +32,26 @@ class LinkedList:
             self.head=new_node
         self.length+=1
 
+    def insert(self,index,value):
+        new_node=Node(value)
+        if index<0 or index>self.length:
+            return False
+        if self.length==0:
+            self.head=new_node
+            self.tail=new_node
+        elif index==0:
+            new_node.next=self.head
+            self.head=new_node
+        else:
+            temp_node=self.head
+            for _ in range(index-1):
+                temp_node=temp_node.next
+            new_node.next=temp_node.next
+            temp_node.next=new_node
+        self.length+=1
+
+
+
     def __str__(self):
          temp_node=self.head
          result=''
@@ -48,9 +69,11 @@ new_linked_list.append(30)
 print(new_linked_list)
 new_linked_list.prepend(-10)
 print(new_linked_list)
+new_linked_list.insert(0,90)
+print(new_linked_list)
 # print(new_linked_list.head.value)
 # print(new_linked_list.tail.value)
 
-#time and space complexity is O(1)
+#time and space complexity is O(n),O(1)
 
 
