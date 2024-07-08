@@ -71,6 +71,12 @@ class CircularSinglyLinkedList:
                 break
         return False
 
+    def get(self,index):
+        current=self.head
+        for _ in range(index):
+            current=current.next
+        return current.value
+
 
 
 
@@ -97,4 +103,5 @@ cslinkedlist.append(20)
 cslinkedlist.append(30)
 cslinkedlist.traverse()
 print(cslinkedlist.search(20))
+print(cslinkedlist.get(2))
 #o(n),O(1)
